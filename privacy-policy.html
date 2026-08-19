@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Clarity</title>
+  <style>
+    :root {
+      --bg: #0b0c0d;
+      --surface: #111517;
+      --surface-2: #15191b;
+      --border: #33393e;
+      --border-soft: #23282c;
+      --fg: #f5f5f3;
+      --fg2: #cdd1d4;
+      --muted: #8a9096;
+      --accent: #ff5a1f;
+      --accent-soft: rgba(255, 90, 31, 0.14);
+      --success: #3ecf6e;
+      --maxw: 700px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg2);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16.5px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 28px 22px 60px;
+    }
+
+    .eyebrow {
+      font-family: "SF Mono", ui-monospace, "Menlo", "Courier New", monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .eyebrow.muted {
+      color: var(--muted);
+    }
+
+    h1 {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: clamp(28px, 7vw, 36px);
+      line-height: 1.1;
+      color: var(--fg);
+      margin: 8px 0 6px;
+    }
+
+    .updated {
+      font-family: "SF Mono", ui-monospace, "Menlo", "Courier New", monospace;
+      font-size: 12.5px;
+      color: var(--muted);
+      margin: 0 0 26px;
+    }
+
+    .tldr {
+      background: var(--surface);
+      border: 1px solid var(--fg);
+      padding: 18px 18px 16px;
+      margin: 0 0 28px;
+    }
+
+    .tldr .eyebrow {
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .tldr p {
+      margin: 0 0 10px;
+      color: var(--fg2);
+      font-size: 15.5px;
+    }
+
+    .tldr p:last-child {
+      margin-bottom: 0;
+    }
+
+    .tldr ul {
+      margin: 0 0 10px;
+      padding-left: 20px;
+    }
+
+    .tldr li {
+      margin-bottom: 7px;
+      font-size: 15.5px;
+      color: var(--fg2);
+    }
+
+    .tldr li:last-child {
+      margin-bottom: 0;
+    }
+
+    .tldr li b {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    nav.toc {
+      background: var(--surface-2);
+      border: 1px solid var(--border-soft);
+      padding: 14px 16px;
+      margin: 0 0 34px;
+    }
+
+    nav.toc .eyebrow {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    nav.toc ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      columns: 1;
+    }
+
+    nav.toc li {
+      counter-increment: toc;
+      margin-bottom: 6px;
+    }
+
+    nav.toc a {
+      color: var(--fg2);
+      text-decoration: none;
+      font-size: 14.5px;
+      display: inline-flex;
+      gap: 8px;
+    }
+
+    nav.toc a:hover,
+    nav.toc a:active {
+      color: var(--accent);
+    }
+
+    nav.toc .num {
+      font-family: "SF Mono", ui-monospace, monospace;
+      color: var(--muted);
+      font-size: 12.5px;
+      min-width: 18px;
+    }
+
+    section {
+      padding: 26px 0;
+      border-top: 1px solid var(--border-soft);
+      scroll-margin-top: 14px;
+    }
+
+    section:first-of-type {
+      border-top: none;
+    }
+
+    .num-tag {
+      font-family: "SF Mono", ui-monospace, "Menlo", "Courier New", monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    h2 {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 21px;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+      margin: 4px 0 12px;
+    }
+
+    h3 {
+      font-size: 15.5px;
+      font-weight: 600;
+      color: var(--fg);
+      margin: 18px 0 8px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul,
+    ol.plain {
+      margin: 0 0 14px;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-color: var(--accent-soft);
+    }
+
+    a:hover,
+    a:active {
+      text-decoration-color: var(--accent);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border-soft);
+      padding: 14px 16px;
+      margin: 14px 0;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .not-list li::marker {
+      color: var(--muted);
+    }
+
+    mark.fill {
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-family: "SF Mono", ui-monospace, "Menlo", "Courier New", monospace;
+      font-size: 0.92em;
+      padding: 1px 6px;
+      border: 1px dashed var(--accent);
+      font-weight: 600;
+    }
+
+    .backtotop {
+      display: inline-block;
+      margin-top: 22px;
+      font-family: "SF Mono", ui-monospace, monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .backtotop:hover {
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-soft);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (min-width: 560px) {
+      .wrap {
+        padding: 44px 32px 70px;
+      }
+    }
+
+    @media print {
+      :root {
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --surface-2: #f7f7f7;
+        --border: #cccccc;
+        --border-soft: #dddddd;
+        --fg: #111111;
+        --fg2: #222222;
+        --muted: #555555;
+        --accent: #b5410f;
+        --accent-soft: #fbe7de;
+      }
+
+      body {
+        font-size: 12.5pt;
+      }
+
+      nav.toc {
+        display: none;
+      }
+
+      section {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <span class="eyebrow">Clarity</span>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: 19 August 2026</p>
+
+    <div class="tldr" id="top">
+      <span class="eyebrow">The short version</span>
+      <p>We know reading a privacy policy is exactly the kind of thing Clarity exists to make easier — so here's the
+        plain-English summary first. The full detail is below if you want it.</p>
+      <ul>
+        <li><b>Your documents are read and summarised entirely on your device</b>, using Apple's on-device AI. Nothing
+          is sent to Clarity's servers — because we don't have any.</li>
+        <li><b>Your documents stay on your device</b> unless you choose to sign in, in which case they can sync through
+          <b>your own private iCloud account</b> — one only you can access.
+        </li>
+        <li><b>We don't run analytics, ad tracking, or sell your data.</b> There's nothing to sell — we never have it in
+          the first place.</li>
+        <li><b>You can delete everything, anytime</b>, right from Settings.</li>
+      </ul>
+    </div>
+
+    <nav class="toc" aria-label="Table of contents">
+      <span class="eyebrow muted">On this page</span>
+      <ol>
+        <li><span class="num">01</span> <a href="#what-clarity-is">What Clarity is</a></li>
+        <li><span class="num">02</span> <a href="#documents-and-ai">Your documents & how they're processed</a></li>
+        <li><span class="num">03</span> <a href="#where-data-lives">Where your data lives</a></li>
+        <li><span class="num">04</span> <a href="#permissions">Permissions we ask for</a></li>
+        <li><span class="num">05</span> <a href="#accounts">Accounts, Sign in with Apple & subscriptions</a></li>
+        <li><span class="num">06</span> <a href="#what-we-dont-do">What we don't do</a></li>
+        <li><span class="num">07</span> <a href="#your-choices">Your choices & control</a></li>
+        <li><span class="num">08</span> <a href="#children">Children's privacy</a></li>
+        <li><span class="num">09</span> <a href="#changes">Changes to this policy</a></li>
+        <li><span class="num">10</span> <a href="#contact">Contact us</a></li>
+      </ol>
+    </nav>
+
+    <section id="what-clarity-is">
+      <span class="num-tag">01</span>
+      <h2>What Clarity is</h2>
+      <p>Clarity is a mobile app that helps you understand legal documents — leases, contracts, NDAs, and similar
+        paperwork — by scanning or importing them and generating a plain-English summary at the level of detail you
+        choose.</p>
+      <p>This policy explains what happens to your documents, and any other information, when you use Clarity.</p>
+    </section>
+
+    <section id="documents-and-ai">
+      <span class="num-tag">02</span>
+      <h2>Your documents & how they're processed</h2>
+      <p>When you scan or import a document, Clarity reads the text using your device's camera and Apple's built-in text
+        recognition — on your device.</p>
+      <p>Your summary is then written by Apple's on-device AI (part of Apple Intelligence), which runs the language
+        model locally, using your device's own hardware.</p>
+      <p><strong>Your document's content is never transmitted to Clarity, to any server we operate, or to any
+          third-party AI service.</strong> We don't run servers that process your documents — so there's nowhere for
+        that content to go except your own device.</p>
+    </section>
+
+    <section id="where-data-lives">
+      <span class="num-tag">03</span>
+      <h2>Where your data lives</h2>
+      <p>By default, your scanned documents, extracted text, and generated summaries are stored only on your device, in
+        Clarity's private app storage.</p>
+      <p>If you choose to sign in with your Apple ID, your documents and settings can optionally sync across your own
+        devices through Apple's iCloud — specifically, your own private iCloud database, which only your Apple ID can
+        access. This is entirely your choice: Clarity works fully without ever signing in.</p>
+      <div class="card">
+        <h3>We never hold a copy ourselves</h3>
+        <p>Whether or not you're signed in, Clarity itself never sees, accesses, or stores a copy of your documents.
+          When iCloud sync is enabled, your data sits in your personal iCloud account, governed by Apple's own privacy
+          practices — see <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy
+            Policy</a> for how iCloud handles your data.</p>
+      </div>
+    </section>
+
+    <section id="permissions">
+      <span class="num-tag">04</span>
+      <h2>Permissions we ask for</h2>
+      <ul>
+        <li><strong>Camera</strong> — to scan physical documents. Used only to capture and read the pages you point it
+          at; nothing is recorded or stored beyond the pages you choose to keep.</li>
+        <li><strong>Photo library</strong> — only if you choose to import an existing photo of a document instead of
+          using the camera.</li>
+      </ul>
+      <p>Neither permission gives Clarity a live or ongoing feed of your camera or photo library — only what you
+        actively select to scan or import.</p>
+    </section>
+
+    <section id="accounts">
+      <span class="num-tag">05</span>
+      <h2>Accounts, Sign in with Apple & subscriptions</h2>
+      <p>Signing in is optional and uses Sign in with Apple. Depending on the choices you make when signing in, we may
+        receive a unique identifier and, if you choose to share them, your name and/or email address — Apple lets you
+        hide your real email behind a private relay address instead, if you'd rather.</p>
+      <p>If you subscribe to Clarity Pro, your payment is handled entirely by the App Store — <strong>Clarity never sees
+          or stores your card details.</strong> Apple shares limited purchase/subscription status information with us so
+        the app can unlock Pro features on your account.</p>
+    </section>
+
+    <section id="what-we-dont-do">
+      <span class="num-tag">06</span>
+      <h2>What we don't do</h2>
+      <ul class="not-list">
+        <li>We don't run analytics or behavioural tracking that profiles you.</li>
+        <li>We don't use advertising or third-party tracking technology.</li>
+        <li>We don't sell, rent, or share your documents or personal information with anyone — we have nothing to sell,
+          since we never hold it.</li>
+        <li>No one at Clarity reads, reviews, or has access to your documents. Ever.</li>
+      </ul>
+      <p>One honest caveat: if you've opted into sharing analytics with app developers under your iOS Settings, Apple
+        may share anonymised crash/diagnostic data with us for that reason alone. That's controlled entirely by your own
+        iOS Settings, not by anything Clarity does — and it never includes your document content.</p>
+    </section>
+
+    <section id="your-choices">
+      <span class="num-tag">07</span>
+      <h2>Your choices & control</h2>
+      <ul>
+        <li><strong>Delete anytime:</strong> Settings → Data &amp; privacy → Delete all scans &amp; summaries removes
+          everything from your device, and from iCloud too if you're signed in.</li>
+        <li><strong>Exporting or sharing is up to you:</strong> when you export a PDF or back up your documents, that
+          file only goes wherever you choose to send it — AirDrop, Messages, Files, and so on. Clarity doesn't see or
+          keep a copy of what you share.</li>
+        <li><strong>Sign out anytime</strong> from Settings — this doesn't delete the documents already on your device.
+        </li>
+      </ul>
+      <p>Because we don't hold your data ourselves, most of the rights you'd expect to formally request from a company —
+        access, correction, deletion, export — are already fully in your hands, on your own device, without needing to
+        ask us for anything.</p>
+    </section>
+
+    <section id="children">
+      <span class="num-tag">08</span>
+      <h2>Children's privacy</h2>
+      <p>Clarity isn't directed at children, and we don't knowingly collect information from anyone under 13 (or the
+        relevant minimum age where you live). In practice, Clarity doesn't collect meaningful personal information from
+        anyone at all — but if you believe a child has used the app in a way that concerns you, please <a
+          href="#contact">contact us</a> and we'll help.</p>
+    </section>
+
+    <section id="changes">
+      <span class="num-tag">09</span>
+      <h2>Changes to this policy</h2>
+      <p>We may update this policy occasionally — for example, if we add a new feature that changes how data is handled.
+        We'll update the "Last updated" date at the top of this page whenever we do. Continuing to use Clarity after a
+        change means you accept the updated policy.</p>
+    </section>
+
+    <section id="contact">
+      <span class="num-tag">10</span>
+      <h2>Contact us</h2>
+      <p>Questions about this policy, or about your data? Reach us at <mark
+          class="fill">[summarisewithclarity@proton.me]</mark>.</p>
+    </section>
+
+    <a class="backtotop" href="#top">↑ Back to top</a>
+
+    <footer>
+      <p>This policy covers the Clarity mobile app only. It doesn't cover any other apps, websites, or services.</p>
+    </footer>
+
+  </div>
+</body>
+
+</html>
