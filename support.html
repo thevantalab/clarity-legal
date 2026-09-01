@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support - Clarity</title>
+  <style>
+    :root {
+      --bg: #0b0c0d;
+      --surface: #111517;
+      --surface-2: #15191b;
+      --border: #33393e;
+      --border-soft: #23282c;
+      --fg: #f5f5f3;
+      --fg2: #cdd1d4;
+      --muted: #8a9096;
+      --accent: #ff5a1f;
+      --accent-soft: rgba(255, 90, 31, 0.14);
+      --success: #3ecf6e;
+      --maxw: 700px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg2);
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16.5px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 28px 22px 60px;
+    }
+
+    .eyebrow {
+      font-family: "SF Mono", ui-monospace, "Menlo", "Courier New", monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .eyebrow.muted {
+      color: var(--muted);
+    }
+
+    h1 {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: clamp(28px, 7vw, 36px);
+      line-height: 1.1;
+      color: var(--fg);
+      margin: 8px 0 6px;
+    }
+
+    .updated {
+      font-family: "SF Mono", ui-monospace, "Menlo", "Courier New", monospace;
+      font-size: 12.5px;
+      color: var(--muted);
+      margin: 0 0 26px;
+    }
+
+    .tldr {
+      background: var(--surface);
+      border: 1px solid var(--fg);
+      padding: 18px 18px 16px;
+      margin: 0 0 28px;
+    }
+
+    .tldr .eyebrow {
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .tldr p {
+      margin: 0 0 10px;
+      color: var(--fg2);
+      font-size: 15.5px;
+    }
+
+    .tldr p:last-child {
+      margin-bottom: 0;
+    }
+
+    .tldr ul {
+      margin: 0 0 10px;
+      padding-left: 20px;
+    }
+
+    .tldr li {
+      margin-bottom: 7px;
+      font-size: 15.5px;
+      color: var(--fg2);
+    }
+
+    .tldr li:last-child {
+      margin-bottom: 0;
+    }
+
+    .tldr li b {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    nav.toc {
+      background: var(--surface-2);
+      border: 1px solid var(--border-soft);
+      padding: 14px 16px;
+      margin: 0 0 34px;
+    }
+
+    nav.toc .eyebrow {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    nav.toc ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      columns: 1;
+    }
+
+    nav.toc li {
+      counter-increment: toc;
+      margin-bottom: 6px;
+    }
+
+    nav.toc a {
+      color: var(--fg2);
+      text-decoration: none;
+      font-size: 14.5px;
+      display: inline-flex;
+      gap: 8px;
+    }
+
+    nav.toc a:hover,
+    nav.toc a:active {
+      color: var(--accent);
+    }
+
+    nav.toc .num {
+      font-family: "SF Mono", ui-monospace, monospace;
+      color: var(--muted);
+      font-size: 12.5px;
+      min-width: 18px;
+    }
+
+    section {
+      padding: 26px 0;
+      border-top: 1px solid var(--border-soft);
+      scroll-margin-top: 14px;
+    }
+
+    section:first-of-type {
+      border-top: none;
+    }
+
+    .num-tag {
+      font-family: "SF Mono", ui-monospace, "Menlo", "Courier New", monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    h2 {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 21px;
+      letter-spacing: -0.01em;
+      color: var(--fg);
+      margin: 4px 0 12px;
+    }
+
+    h3 {
+      font-size: 15.5px;
+      font-weight: 600;
+      color: var(--fg);
+      margin: 18px 0 8px;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul,
+    ol.plain {
+      margin: 0 0 14px;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-color: var(--accent-soft);
+    }
+
+    a:hover,
+    a:active {
+      text-decoration-color: var(--accent);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border-soft);
+      padding: 14px 16px;
+      margin: 14px 0;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .not-list li::marker {
+      color: var(--muted);
+    }
+
+    mark.fill {
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-family: "SF Mono", ui-monospace, "Menlo", "Courier New", monospace;
+      font-size: 0.92em;
+      padding: 1px 6px;
+      border: 1px dashed var(--accent);
+      font-weight: 600;
+    }
+
+    .backtotop {
+      display: inline-block;
+      margin-top: 22px;
+      font-family: "SF Mono", ui-monospace, monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .backtotop:hover {
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-soft);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (min-width: 560px) {
+      .wrap {
+        padding: 44px 32px 70px;
+      }
+    }
+
+    @media print {
+      :root {
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --surface-2: #f7f7f7;
+        --border: #cccccc;
+        --border-soft: #dddddd;
+        --fg: #111111;
+        --fg2: #222222;
+        --muted: #555555;
+        --accent: #b5410f;
+        --accent-soft: #fbe7de;
+      }
+
+      body {
+        font-size: 12.5pt;
+      }
+
+      nav.toc {
+        display: none;
+      }
+
+      section {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="wrap">
+
+    <span class="eyebrow">Clarity</span>
+    <h1>Support</h1>
+    <p class="updated">Last updated: 1 September 2026</p>
+
+    <div class="tldr" id="top">
+      <span class="eyebrow">The short version</span>
+      <p>Clarity summarises legal documents entirely on your device. If something isn't working, the
+        answers below cover the problems people hit most. If they don't, email
+        <a href="mailto:summarisewithclarity@proton.me">summarisewithclarity@proton.me</a> and a real
+        person will reply.</p>
+    </div>
+
+    <nav class="toc" aria-label="Table of contents">
+      <span class="eyebrow muted">On this page</span>
+      <ol>
+        <li><span class="num">01</span> <a href="#contact">Contact us</a></li>
+        <li><span class="num">02</span> <a href="#requirements">What you need to run Clarity</a></li>
+        <li><span class="num">03</span> <a href="#declined">"Couldn't summarise this content"</a></li>
+        <li><span class="num">04</span> <a href="#slow">Summaries are slow</a></li>
+        <li><span class="num">05</span> <a href="#levels">Reading levels</a></li>
+        <li><span class="num">06</span> <a href="#allowance">Free summaries and Clarity Pro</a></li>
+        <li><span class="num">07</span> <a href="#sync">Sync, sign-in and your name</a></li>
+        <li><span class="num">08</span> <a href="#deleting">Deleting your account</a></li>
+        <li><span class="num">09</span> <a href="#privacy">Privacy and your documents</a></li>
+        <li><span class="num">10</span> <a href="#accuracy">Accuracy, and what Clarity is not</a></li>
+      </ol>
+    </nav>
+
+    <section id="contact">
+      <span class="num-tag">01</span>
+      <h2>Contact us</h2>
+      <p>Email <a href="mailto:summarisewithclarity@proton.me">summarisewithclarity@proton.me</a>. We aim to reply
+        within two working days.</p>
+      <div class="card">
+        <h3>What to include</h3>
+        <p>Your device model and iOS version (Settings &rsaquo; General &rsaquo; About), the Clarity version
+          (Settings &rsaquo; About in the app), the reading level you chose, and what happened. <strong>Please don't
+          send us the document itself</strong> - we can almost always help without it, and we would rather not
+          receive your contracts.</p>
+      </div>
+    </section>
+
+    <section id="requirements">
+      <span class="num-tag">02</span>
+      <h2>What you need to run Clarity</h2>
+      <p>Clarity summarises using Apple Intelligence, which runs on your device rather than on a server. That means
+        it needs:</p>
+      <ul>
+        <li>A device that supports Apple Intelligence</li>
+        <li>iOS 26 or later</li>
+        <li>Apple Intelligence switched on in Settings &rsaquo; Apple Intelligence &amp; Siri</li>
+        <li>Enough free storage for the on-device model to finish downloading</li>
+      </ul>
+      <p>If Apple Intelligence is off or still downloading, Clarity will tell you so rather than failing quietly.</p>
+    </section>
+
+    <section id="declined">
+      <span class="num-tag">03</span>
+      <h2>"Couldn't summarise this content"</h2>
+      <p>This means Apple's on-device safety check declined the document. It is not a judgement about you, and the
+        document has not been sent anywhere - the check runs on your phone, before any summary is written.</p>
+      <p>What helps, in order:</p>
+      <ul>
+        <li><strong>Try again.</strong> The check is not perfectly consistent; a second attempt often succeeds.</li>
+        <li><strong>Change the reading level.</strong> A document declined at one level frequently works at
+          another.</li>
+        <li><strong>Try a shorter section.</strong> Scanning fewer pages sometimes gets through.</li>
+      </ul>
+      <div class="card">
+        <h3>Some documents will not go through at all</h3>
+        <p>Documents dealing with illness, death, or personal financial hardship are the most likely to be declined,
+          because those are subjects the safety check treats cautiously. We cannot override it - it is part of iOS,
+          not part of Clarity. We would rather say so plainly than leave you retrying forever.</p>
+      </div>
+    </section>
+
+    <section id="slow">
+      <span class="num-tag">04</span>
+      <h2>Summaries are slow</h2>
+      <p>A summary usually takes somewhere between 15 seconds and a minute or so. Longer documents, and the more
+        detailed reading levels, take longer.</p>
+      <p>This is the cost of running on your phone instead of a server: there is no data centre doing the work, just
+        your device. Keeping Clarity in the foreground while it works is the single most effective thing you can do,
+        since iOS gives background apps less processing time. A very long document, a hot phone, or Low Power Mode
+        will all slow it down.</p>
+    </section>
+
+    <section id="levels">
+      <span class="num-tag">05</span>
+      <h2>Reading levels</h2>
+      <p>Clarity has five, from <em>Explain like I'm five</em> to <em>Lawyer</em>. Set the default in Settings, or
+        change any individual summary from its own screen - the figures stay the same, only the language changes.</p>
+      <p><em>Detailed</em> and <em>Lawyer</em> require Clarity Pro. The other three are free.</p>
+      <p>Switching a document to a level you have used before is instant, because it was saved. A level you have not
+        used yet has to be generated, which takes as long as the first summary did.</p>
+    </section>
+
+    <section id="allowance">
+      <span class="num-tag">06</span>
+      <h2>Free summaries and Clarity Pro</h2>
+      <p>The free tier includes three summaries a month and up to eight pages per document. The month runs from your
+        first summary, not from the 1st.</p>
+      <div class="card">
+        <h3>"I have fewer summaries than I expected"</h3>
+        <p>Your allowance belongs to your Apple ID, not to a single device. If you use Clarity on more than one
+          device, they share one pool of three - they do not get three each. Reinstalling does not reset it either.
+          This is deliberate.</p>
+      </div>
+      <p>Clarity Pro removes the monthly limit and the page limit, and unlocks all five reading levels. Manage or
+        cancel a subscription in Settings &rsaquo; your name &rsaquo; Subscriptions. Deleting your
+        Clarity account does <strong>not</strong> cancel a subscription.</p>
+    </section>
+
+    <section id="sync">
+      <span class="num-tag">07</span>
+      <h2>Sync, sign-in and your name</h2>
+      <p>Signing in with Apple is optional. Without it, Clarity works fully and your documents stay on the one
+        device. Signing in syncs your documents and some settings through your own private iCloud.</p>
+      <p>If a document has not appeared on your other device, check that both are signed into the same Apple ID,
+        that both have iCloud Drive enabled, and that both have a working connection. First sync on a new device can
+        take several minutes.</p>
+      <div class="card">
+        <h3>Clarity shows "Signed in" instead of my name</h3>
+        <p>Apple sends an app your name and email <em>only on your first-ever sign-in</em>. If you previously deleted
+          your Clarity account, that first sign-in has already happened, so there is nothing left for us to show.</p>
+        <p>To fix it: go to Settings &rsaquo; your name &rsaquo; Sign in with Apple &rsaquo; Clarity and choose
+          <strong>Stop using Apple ID</strong>. The next sign-in then counts as a first sign-in again, and your name
+          comes back.</p>
+      </div>
+    </section>
+
+    <section id="deleting">
+      <span class="num-tag">08</span>
+      <h2>Deleting your account</h2>
+      <p>Account &rsaquo; Delete account, in the app. This permanently removes your account and every scan and
+        summary stored with it, on the device and in iCloud. It cannot be undone.</p>
+      <p>Two things deletion does not do, both outside our control:</p>
+      <ul>
+        <li>It does not cancel a Clarity Pro subscription - cancel that in your Apple ID subscription settings.</li>
+        <li>It does not remove Clarity from Settings &rsaquo; your name &rsaquo; Sign in with Apple. Remove it there
+          yourself if you want a completely clean slate. Doing so is also what restores your name if you sign up
+          again.</li>
+      </ul>
+    </section>
+
+    <section id="privacy">
+      <span class="num-tag">09</span>
+      <h2>Privacy and your documents</h2>
+      <p>Your documents are summarised on your device and are never sent to us or to any third-party server. If you
+        sign in, they sync to your own private iCloud database, which only your Apple ID can open. We never hold a
+        copy.</p>
+      <p>The full detail is in the <a href="privacy-policy.html">Privacy Policy</a>, and the terms you agree to by
+        using Clarity are Apple's
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank"
+          rel="noopener">Standard End User Licence Agreement</a>, which is what the app itself links to.</p>
+    </section>
+
+    <section id="accuracy">
+      <span class="num-tag">10</span>
+      <h2>Accuracy, and what Clarity is not</h2>
+      <p>Clarity summarises with AI and can make mistakes. It can miss a term, misread a figure, or describe
+        something in a way that does not quite match the original.</p>
+      <div class="card">
+        <h3>Clarity is not legal advice</h3>
+        <p>It is a reading aid, not a lawyer. Always read the original document, and consult a qualified solicitor
+          before you sign, rely on, or act on anything Clarity tells you. If a summary and the document disagree,
+          the document is what counts.</p>
+      </div>
+      <p>Very long documents are shortened before summarising, so the summary may not cover every clause. The
+        flagged clauses are a prompt to look closer, not a complete list of everything that matters.</p>
+    </section>
+
+    <a class="backtotop" href="#top">Back to top</a>
+
+    <footer>
+      <p>This page covers the Clarity app only. Contact:
+        <a href="mailto:summarisewithclarity@proton.me">summarisewithclarity@proton.me</a></p>
+    </footer>
+
+  </div>
+</body>
+
+</html>
